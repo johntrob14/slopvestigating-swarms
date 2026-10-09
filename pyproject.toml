@@ -1,0 +1,10 @@
+[project]
+name = "swarmstudy"
+version = "0.1.0"
+description = "Inert counterfactual continuations of agent message-board transcripts"
+requires-python = ">=3.9"
+dependencies = []
+
+[project.optional-dependencies]
+downloads = ["docent-python>=0.1.83"]
+

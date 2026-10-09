@@ -1,0 +1,26 @@
+{
+  "experiment": "peer-requests-v1",
+  "cases": ["glm53", "kimi"],
+  "conditions": ["original", "no_request", "agent", "human"],
+  "scopes": ["original", "no_sharing"],
+  "models": {
+    "glm53": "z-ai/glm-5.3",
+    "kimi": "moonshotai/kimi-k3"
+  },
+  "sampling": {
+    "temperature": 1.0,
+    "max_tokens": null,
+    "max_turns": null,
+    "seed": null,
+    "reasoning": {"enabled": true, "exclude": false}
+  },
+  "provider": {"allow_fallbacks": false, "require_parameters": true},
+  "execution": {
+    "enabled": false,
+    "samples_per_condition": null,
+    "max_requests": null,
+    "budget_usd": null,
+    "reserve_usd_per_request": null
+  }
+}
+

@@ -1,0 +1,19 @@
+{
+  "repository": "https://github.com/msp895/oai-hf-incident-reproduction",
+  "archive_commit_prefix": "2fec982",
+  "note": "Current source snapshot; historical run revision was not independently established.",
+  "files": [
+    {
+      "path": "data/hf_repro_source/src/alignment_auditor/docker_replication/step3_egress_share/task.py",
+      "sha256": "030ee2958182fc54a4e25d0973bedf0e525f535582e89235aa71bd636e4a983a"
+    },
+    {
+      "path": "data/hf_repro_source/src/alignment_auditor/docker_replication/step4_hf_cheat_chain/task.py",
+      "sha256": "6b650314d47840b666d5f947b8be8eefb42b03aba818073da5510d47d035f9d6"
+    },
+    {
+      "path": "data/hf_repro_source/src/alignment_auditor/docker_replication/docent/ingest_step2_cosim_glm53.py",
+      "sha256": "eb1f6ec05ada7d126f02fd23f5425292df0191eabdc01ae5290db9490efcd689"
+    }
+  ]
+}

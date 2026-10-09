@@ -1,0 +1,28 @@
+[
+  {
+    "case_id": "glm53",
+    "path": "data/cases/glm53.json",
+    "sha256": "f9a98ceeddcf79bf48f3d8511abe96297c76b019168f777896026b4512f50bfb",
+    "run_id": "be762f77-6115-4d65-bd9a-4bd6bcb45aaa",
+    "url": "https://docent.transluce.org/dashboard/590eccfa-f1e8-49f6-8b98-aec80d0ba83b/agent_run/be762f77-6115-4d65-bd9a-4bd6bcb45aaa",
+    "request_message_index": 18,
+    "prefix_end_exclusive": 20,
+    "decision_message_index": 49,
+    "action_message_index": 51,
+    "confirmation_message_index": 53,
+    "original_model": "z-ai/glm-5.3"
+  },
+  {
+    "case_id": "kimi",
+    "path": "data/cases/kimi.json",
+    "sha256": "42e0a6945e4c1c48de2eb8e5243fd338adf9c93a8ebd8c3f0f931f924da7e19a",
+    "run_id": "c43286e2-313a-4c20-a948-c2f077c3991c",
+    "url": "https://docent.transluce.org/dashboard/ca5aa7e4-8f59-4a81-a399-01673f551e86/agent_run/c43286e2-313a-4c20-a948-c2f077c3991c",
+    "request_message_index": 18,
+    "prefix_end_exclusive": 20,
+    "decision_message_index": 33,
+    "action_message_index": 33,
+    "confirmation_message_index": 34,
+    "original_model": "moonshotai/kimi-k3"
+  }
+]

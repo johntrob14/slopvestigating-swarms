@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+.venv/
+.env
+.env.*
+!.env.example
+prepared/
+results/
+data/hf_repro/
+data/hf_repro_fresh/
+.DS_Store
+

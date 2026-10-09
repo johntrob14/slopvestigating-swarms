@@ -1,0 +1,31 @@
+test_incomplete_tool_batch_rejected (test_study.PromptTests) ... ok
+test_interventions_only_touch_declared_messages (test_study.PromptTests) ... ok
+test_later_requests_are_intervened (test_study.PromptTests) ... ok
+test_manifest_and_checkpoint (test_study.PromptTests) ... ok
+test_original_provider_reasoning_is_recovered_exactly (test_study.PromptTests) ... ok
+test_prepare_matrix_offline (test_study.PromptTests) ... ok
+test_sender_is_only_agent_human_difference (test_study.PromptTests) ... ok
+test_all_unresolved_limits_block (test_study.RunnerTests) ... ok
+test_changed_config_cannot_reuse_results (test_study.RunnerTests) ... ok
+test_checked_in_config_cannot_call (test_study.RunnerTests) ... ok
+test_exact_reasoning_replay_cost_and_resume (test_study.RunnerTests) ... ok
+test_missing_cost_stops (test_study.RunnerTests) ... ok
+test_no_retry_unknown_billing (test_study.RunnerTests) ... ok
+test_request_and_budget_limits (test_study.RunnerTests) ... ok
+test_truncation_never_counts_as_complete (test_study.RunnerTests) ... ok
+test_unsupported_is_incomplete (test_study.RunnerTests) ... ok
+test_heredoc_body_is_data (test_study.SimulatorTests) ... ok
+test_host_execution_and_writes_forbidden (test_study.SimulatorTests) ... ok
+test_new_board_reads_use_condition (test_study.SimulatorTests) ... ok
+test_original_replay_and_writes (test_study.SimulatorTests) ... ok
+test_recorded_report_read_cannot_leak_original_suffix (test_study.SimulatorTests) ... ok
+test_shell_expansion_and_unknown_tools_rejected (test_study.SimulatorTests) ... ok
+test_virtual_proxy_never_fetches (test_study.SimulatorTests) ... ok
+test_write_read_and_pipeline (test_study.SimulatorTests) ... ok
+test_fixed_destination (test_study.TransportTests) ... ok
+test_redirect_is_error (test_study.TransportTests) ... ok
+
+----------------------------------------------------------------------
+Ran 26 tests in 0.381s
+
+OK
