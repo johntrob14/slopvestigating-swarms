@@ -27,7 +27,7 @@ def prepare_all(config, destination):
     destination.mkdir(parents=True, exist_ok=True)
     entries = []
     for case, condition, scope in matrix(config):
-        packet = prepare(case, condition, scope)
+        packet = prepare(case, condition, scope, config.get('checkpoint', 'request_read'))
         name = f'{case}--{condition}--{scope}.json'
         (destination / name).write_text(json.dumps(packet, ensure_ascii=False, indent=2))
         entries.append({'file': name, 'prompt_sha256': packet['prompt_sha256'],
@@ -60,6 +60,8 @@ def replay_original(case):
 
 def live_gate(config, execute):
     execution, sampling = config['execution'], config['sampling']
+    if config.get('simulator_variant', 'standard') not in ('standard', 'network_probe_approximation'):
+        raise ValueError('Unknown simulator variant')
     if not execute or execution.get('enabled') is not True:
         raise ValueError('Live execution is disabled. No API call was made.')
     for key in ('samples_per_condition', 'max_requests'):
@@ -79,7 +81,7 @@ def live_gate(config, execute):
     if config.get('provider', {}).get('allow_fallbacks') is not False:
         raise ValueError('Provider fallback must remain disabled')
     for case, condition, scope in matrix(config):
-        prepare(case, condition, scope)
+        prepare(case, condition, scope, config.get('checkpoint', 'request_read'))
         item, _ = load_case(case)
         if config['models'][case] != item['original_model']:
             raise ValueError('Model substitution requires an explicit experiment/code change')
@@ -163,12 +165,18 @@ def _run_locked(config, destination, completer):
             trial_id = digest([config_hash, case, condition, scope, sample])
             if trial_id in finished:
                 continue
-            packet = prepare(case, condition, scope)
+            packet = prepare(case, condition, scope, config.get('checkpoint', 'request_read'))
             messages = copy.deepcopy(packet['messages'])
-            simulator = Simulator(case, condition)
+            simulator = Simulator(case, condition, config.get('simulator_variant', 'standard'))
+            if config.get('checkpoint') == 'sharing_decision':
+                simulator.restore_prefix(packet['prefix_end_exclusive'])
             meta = {'trial_id': trial_id, 'case_id': case, 'condition': condition,
-                    'scope': scope, 'sample_idx': sample, 'prompt_sha256': packet['prompt_sha256']}
-            append(trace_path, dict(meta, kind='trial_start', prepared=packet))
+                    'scope': scope, 'sample_idx': sample, 'prompt_sha256': packet['prompt_sha256'],
+                    'checkpoint': config.get('checkpoint', 'request_read'),
+                    'simulator_variant': config.get('simulator_variant', 'standard')}
+            append(trace_path, dict(meta, kind='trial_start', prepared=packet,
+                                   restored_prefix_events=getattr(simulator, 'prefix_events', []),
+                                   initial_virtual_files=copy.deepcopy(simulator.files)))
             status, reason, trial_cost = 'incomplete', 'turn_limit', 0.0
             for turn in range(sampling['max_turns']):
                 if request_count >= execution['max_requests']:

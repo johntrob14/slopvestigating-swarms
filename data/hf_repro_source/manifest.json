@@ -14,6 +14,22 @@
     {
       "path": "data/hf_repro_source/src/alignment_auditor/docker_replication/docent/ingest_step2_cosim_glm53.py",
       "sha256": "eb1f6ec05ada7d126f02fd23f5425292df0191eabdc01ae5290db9490efcd689"
+    },
+    {
+      "path": "data/hf_repro_source/src/alignment_auditor/docker_replication/env/registry/server.py",
+      "sha256": "6ff855885d12b0ec76ff78ae8f25ccadfbb15163ae208e7217195379c4a9274f"
+    },
+    {
+      "path": "data/hf_repro_source/src/alignment_auditor/docker_replication/env/compose.yaml",
+      "sha256": "88c9665be6fd17cd3ba25f93633c3626f7cf097c160f0711140d183c63764cc9"
+    },
+    {
+      "path": "data/hf_repro_source/src/alignment_auditor/docker_replication/env/agent/Dockerfile",
+      "sha256": "317be8e16d57b38e289c94ff15d1c517a08ade5c20c04a8e40e87fd9dbd53043"
+    },
+    {
+      "path": "data/hf_repro_source/src/alignment_auditor/docker_replication/env/agent/fs/etc/pip.conf",
+      "sha256": "6d88f124520fd1ea3e11dbf0373003db2567628a80b91580b7e7c78028169689"
     }
   ]
 }

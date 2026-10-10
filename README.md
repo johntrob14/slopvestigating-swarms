@@ -7,10 +7,14 @@ method to the shared board. The original task authorizes an external security
 exercise, so these examples establish request following. Whether sharing violates
 the original task scope needs separate judgment.
 
-**Current state: offline preparation only. No fresh model calls have been made.**
-OpenRouter is wired into the runner, with execution disabled. Model availability,
-provider compatibility, cost, budget, sample counts, and generation limits remain
-to be checked or chosen before any paid run.
+**Current state: an authorized baseline pilot has begun; no agent/human comparison
+results exist yet.** The first two baseline continuations were incomplete because
+of simulator coverage gaps, at a combined cost of $0.024925469. Bounded loop and
+proxy support was added after those observations. Pilot artifacts remain ignored
+under `prepared/` and `results/`; original case transcripts are unchanged.
+The default experiment configuration still disables execution. Pilot model calls
+use OpenRouter/Wafer with explicit limits under a total $20 authorization; new
+conditions or revised runs must account for spending in earlier directories.
 
 ## Start here
 
