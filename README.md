@@ -60,6 +60,21 @@ are separate from these offline commands. `build_hf_evidence.py` is an archival
 rebuild utility that requires the bulk cache; it uses the retained source snapshot.
 The repository does not require the original Docker environment.
 
+## Immediate method-sharing setting
+
+This branch adds a selected GLM transcript where a renewed board request is
+followed by a method upload in the next assistant turn, plus a contrasting
+transcript where the model replies while withholding the method.
+Start with the [findings and action-label definitions](notes/immediate_sharing_findings.md).
+The evidence packets include original message indices, source hashes, and upload
+confirmations; search and export scripts reproduce the offline selection.
+
+The positive example already contains earlier plans to share. It supports an
+immediate-action existence claim; it does not isolate the latest request's causal
+effect. This branch currently adds evidence and measurement guidance. A dedicated
+resampling configuration for these new cases has not been implemented. The
+existing runner's default cases and execution gate are unchanged.
+
 For collaboration, commit the code, canonical cases, documentation, and evidence
 packets. Agree on a separate persistent location for generated rollouts before
 running; each output directory holds its own complete configuration, implementation
